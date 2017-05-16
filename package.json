@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/limingtech-front-end/lm-th-wx-bridge#readme",
   "dependencies": {
+    "error_message": "git+https://github.com/limingtech-front-end/lm-se-error-message.git",
     "lm-ut-calc-uri-params": "git+https://github.com/limingtech-front-end/lm-ut-calc-uri-params.git"
   }
 }
