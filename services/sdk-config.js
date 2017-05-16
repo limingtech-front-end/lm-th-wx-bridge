@@ -1,5 +1,5 @@
 var Vue=require('vue')
-var errorMessage=require('lm-se-error-message')
+var errorMessage=require('lm-sr-error-message')
 var calcUriParams=require('lm-ut-calc-uri-params')
 
 module.exports=function(success,fail){
