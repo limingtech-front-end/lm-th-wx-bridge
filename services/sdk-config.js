@@ -11,7 +11,7 @@ module.exports=function(success,fail){
 					wechatOpenId:calcUriParams.getUriQuery().state})
 			}
 		}).then(function(response){
-		let data=JSON.parse(response.data)
+		var data=JSON.parse(response.data)
 		if(data.resultCode==100){
 			success && success(data)
 		}else{
