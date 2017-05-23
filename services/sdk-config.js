@@ -10,14 +10,14 @@ module.exports=function(success,fail){
 					urlInfo:location.href.split('#')[0],
 					wechatOpenId:calcUriParams.getUriQuery().state})
 			}
-		}).then((response)=>{
+		}).then(function(response){
 		let data=JSON.parse(response.data)
 		if(data.resultCode==100){
 			success && success(data)
 		}else{
 			fail && fail(errorMessage[data.resultCode])
 		}
-	},(response)=>{
+	},function(response){
 		fail && fail('网络错误')
 	})
 }
