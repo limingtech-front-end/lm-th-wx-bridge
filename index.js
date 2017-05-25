@@ -1,6 +1,7 @@
 	
 
 var sdkConfig=require('./services/sdk-config')
+var calcUriParams=require('lm-ut-calc-uri-params')
 
 var wechatBridge=null
 
@@ -64,13 +65,17 @@ function initWechatWebView() {
 }
 
 module.exports=function(){
-    if(wechatBridge){
-        console.log('wechat bridge inited')
-        return Promise.resolve(wechatBridge)
-    }else{
-    	console.log('init bridge')
-        return initWechatWebView()
-    }
+	if(!!calcUriParams.getUriQuery().state){
+	    if(wechatBridge){
+	        console.log('wechat bridge inited')
+	        return Promise.resolve(wechatBridge)
+	    }else{
+	    	console.log('init bridge')
+	        return initWechatWebView()
+	    }
+	}else{
+		return Promise.resolve({})	
+	}
 }
 
 
